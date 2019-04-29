@@ -61,4 +61,4 @@ hostname: autobot02
 experiment_time: '2019_04_08_14_05_37'
 platform: armv7l
 experiment_name: default
-verdict: PASS
+verdict: TRUE

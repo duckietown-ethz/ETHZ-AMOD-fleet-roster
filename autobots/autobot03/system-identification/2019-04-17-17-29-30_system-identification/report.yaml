@@ -5,7 +5,7 @@ osap_error: 0.03274297801235274
 nsap_error: 0.5588670623714814
 optimization_solve_time: '0.0389280319214'
 hostname: autobot03
-experiment_time: system_identification_2019_04_17_17_29_30
+experiment_time: '2019_04_17_17_29_30'
 platform: armv7l
 verdict: PASS
 sysid_code_version: v1.0
