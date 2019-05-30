@@ -1,0 +1,30 @@
+#Structure:
+#bot_id:
+# configuration:
+#   YYYY_MM_DD:
+#     -first change
+#     -second change
+# calibration:
+#   YYYY_MM_DD:
+#     -type1
+#     -type2
+# experiment:
+#   YYYY_MM_DD:
+#     -first experiment
+#     -second experiment
+
+autobot99:
+  configuration:
+    2019_05_30:
+      -first setup of bot
+    2019_05_31:
+      -changed motor
+  calibration:
+    2019_05_30:
+      -kinematics
+      -camera intrinsics
+      -camera extrinsics
+  experiment:
+    2019_05_31:
+      -aido2_12345
+      -aido2_67890
