@@ -28,4 +28,30 @@ autobot01:
     date_2019_05_31:
       - aido2_12345
       - aido2_67890
-autobot100:
+autobot02:
+  configuration:
+    date_2019_05_30:
+      - first setup of bot
+    date_2019_05_31:
+      - changed led's
+  calibration:
+    date_2019_05_30:
+      - kinematics
+      - camera intrinsics
+  experiment:
+    date_2019_05_31:
+      - aido2_1234567890
+      - aido2_67890
+autobot04:
+  configuration:
+    date_2019_05_30:
+      - first setup of bot
+    date_2019_05_31:
+      - changed HUT
+  calibration:
+    date_2019_05_30:
+      - camera intrinsics
+      - camera extrinsics
+  experiment:
+    date_2019_05_31:
+      - aido2_12345
