@@ -29,13 +29,16 @@ def copy_calibrations_device(device: DeviceInfo):
 
     OUTPUT_DIR = '../'
     if "autobot" in device.hostname:
-        OUTPUT_DIR = os.path.join(OUTPUT_DIR,'autobots')
+        OUTPUT_DIR = os.path.join(OUTPUT_DIR,'/home/demetris/autolab/ETHZ-AMOD-fleet-roster/autobots')
     else:
-        OUTPUT_DIR = os.path.join(OUTPUT_DIR,'watchtowers')
+        OUTPUT_DIR = os.path.join(OUTPUT_DIR,'/home/demetris/autolab/ETHZ-AMOD-fleet-roster/watchtowers')
     
     date = datetime.today().strftime('%Y-%m-%d')
 
-    OUTPUT_DIR = os.path.join(OUTPUT_DIR,device.hostname,'intrinsic-calibration', str("%s_intrinsic-calibration" % date))
+    if "autobot" in device.hostname:
+        OUTPUT_DIR = os.path.join(OUTPUT_DIR,device.hostname,'camera-verification', str("%s-12-00_camera-verification" % date),'calibrations','kinematics')
+    else:
+        OUTPUT_DIR = os.path.join(OUTPUT_DIR,device.hostname,'intrinsic-calibration', str("%s-12-00_intrinsic-calibration" % date))
 
     if not os.path.exists(OUTPUT_DIR):
         os.makedirs(OUTPUT_DIR)
@@ -50,7 +53,7 @@ def copy_calibrations_device(device: DeviceInfo):
     except subprocess.CalledProcessError:
         return "MD5 error - agent"
     
-    cmd = 'scp %s:%s %s' % (ssh_host, filename, fn)
+    cmd = 'sudo scp %s:%s %s' % (ssh_host, filename, fn)
     
     try:
         res = subprocess.check_output(cmd, shell=True)
@@ -83,7 +86,7 @@ def copy_calibrations_all_devices(device_list: List[DeviceInfo]):
 
 def copy_calibrations_main():
 
-    device_list = get_device_list('device_list.txt')
+    device_list = get_device_list('/home/demetris/autolab/ETHZ-AMOD-fleet-roster/scripts/device_list.txt')
 
     print('Copying calibrations:')
     copy_calibrations_all_devices(device_list)
