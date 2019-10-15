@@ -11,7 +11,7 @@ from roster_utils import get_device_list, DeviceInfo, show_status
 
 def copy_calibrations_device(device: DeviceInfo):
 
-    filename = "/data/config/calibrations/camera_intrinsic/%s.yaml" % device.hostname
+    filename = "/data/config/calibrations/kinematics/%s.yaml" % device.hostname
 
     ssh_host = '%s@%s.local' % (device.username, device.hostname)
     cmd = 'ssh %s "if [ -f %s ]; then \
