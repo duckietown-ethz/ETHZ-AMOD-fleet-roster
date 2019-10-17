@@ -1,0 +1,23 @@
+camera_matrix:
+  cols: 3
+  data: [311.72522897186565, 0.0, 330.2270278292746, 0.0, 308.1238981689711, 263.81206654435533,
+    0.0, 0.0, 1.0]
+  rows: 3
+camera_name: demetrisrobot/camera_node
+distortion_coefficients:
+  cols: 5
+  data: [-0.24671365107715396, 0.04135090717607308, -0.007118491679416383, -0.0038395879859295648,
+    0.0]
+  rows: 1
+distortion_model: plumb_bob
+image_height: 480
+image_width: 640
+projection_matrix:
+  cols: 4
+  data: [213.411865234375, 0.0, 323.3923436891928, 0.0, 0.0, 248.68258666992188, 268.7283358851164,
+    0.0, 0.0, 0.0, 1.0, 0.0]
+  rows: 3
+rectification_matrix:
+  cols: 3
+  data: [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+  rows: 3

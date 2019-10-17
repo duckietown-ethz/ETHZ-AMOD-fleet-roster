@@ -15,8 +15,8 @@ def copy_calibrations_device(device: DeviceInfo):
 
     for name in list_of_calibrations:
         print (name)
-        if name =="camera_intrinsic" and "watchtower" in device.hostname:
-            return "no extrinsic or kinematics in watchtower"
+        if (name =="kinematics" or name =="camera_extrinsic") and "watchtower" in device.hostname:
+            continue
 
         filename = "/data/config/calibrations/%s/%s.yaml" % (name, device.hostname)
 
@@ -33,12 +33,12 @@ def copy_calibrations_device(device: DeviceInfo):
             if e.returncode == 3:
                 return "No file"
             return "SSH Error"
-
+            
         OUTPUT_DIR = '../'
         if "autobot" in device.hostname:
-            OUTPUT_DIR = os.path.join(OUTPUT_DIR,'/home/demetris/autolab/ETHZ-AMOD-fleet-roster/autobots')
+            OUTPUT_DIR = os.path.join(OUTPUT_DIR,'/home/duckietown/ETHZ-AMOD-fleet-roster/autobots')
         else:
-            OUTPUT_DIR = os.path.join(OUTPUT_DIR,'/home/demetris/autolab/ETHZ-AMOD-fleet-roster/watchtowers')
+            OUTPUT_DIR = os.path.join(OUTPUT_DIR,'/home/duckietown/ETHZ-AMOD-fleet-roster/watchtowers')
         
         date = datetime.today().strftime('%Y-%m-%d')
 
@@ -94,7 +94,7 @@ def copy_calibrations_all_devices(device_list: List[DeviceInfo]):
 
 def copy_calibrations_main():
 
-    device_list = get_device_list('/home/demetris/autolab/ETHZ-AMOD-fleet-roster/scripts/device_list.txt')
+    device_list = get_device_list('/home/duckietown/ETHZ-AMOD-fleet-roster/scripts/device_list.txt')
 
     print('Copying calibrations:')
     copy_calibrations_all_devices(device_list)

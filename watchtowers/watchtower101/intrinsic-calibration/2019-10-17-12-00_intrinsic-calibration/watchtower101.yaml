@@ -1,0 +1,23 @@
+camera_matrix:
+  cols: 3
+  data: [330.58464823394917, 0.0, 330.88192371106317, 0.0, 332.3458696155489, 216.23952812251065,
+    0.0, 0.0, 1.0]
+  rows: 3
+camera_name: watchtower101/camera_node
+distortion_coefficients:
+  cols: 5
+  data: [-0.2736565147724902, 0.05270432444225259, 0.0030200077251129687, 3.93591842800121e-05,
+    0.0]
+  rows: 1
+distortion_model: plumb_bob
+image_height: 480
+image_width: 640
+projection_matrix:
+  cols: 4
+  data: [227.31674194335938, 0.0, 328.619712131549, 0.0, 0.0, 270.4371337890625, 206.76657132906257,
+    0.0, 0.0, 0.0, 1.0, 0.0]
+  rows: 3
+rectification_matrix:
+  cols: 3
+  data: [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+  rows: 3
